@@ -43,7 +43,7 @@ export function Hero() {
 
   return (
     <section className="relative px-2.5 pt-4">
-      <div className="relative mx-auto h-[937px] max-w-[1703px] overflow-hidden rounded-[30px]">
+      <div className="relative mx-auto h-[max(760px,100svh)] max-w-[1703px] overflow-hidden rounded-[24px] md:h-[937px] md:rounded-[30px]">
         {featured.map((game, i) => (
           <div
             key={game.title}
@@ -74,29 +74,32 @@ export function Hero() {
           <Image key={current.title} src={current.logo} alt={current.title} width={148} height={55} className="absolute top-[42px] right-12 hidden h-auto w-[148px] animate-[fade-in_600ms_ease-out] md:block" />
         )}
 
-        <div className="relative flex h-full flex-col justify-end gap-12 px-6 pb-16 md:px-11 xl:flex-row xl:items-end xl:justify-between">
-          <div className="flex max-w-[625px] flex-col gap-[30px] xl:mb-[243px]">
+        <div className="relative flex h-full flex-col justify-end gap-8 px-4 pb-8 md:gap-12 md:px-11 md:pb-16 xl:flex-row xl:items-end xl:justify-between">
+          <div className="flex max-w-[625px] flex-col gap-5 md:gap-[30px] xl:mb-[243px]">
             <Reveal step="first">
-              <h1 className="text-[56px] leading-none text-white md:text-[100px]">
+              <h1 className="text-[44px] leading-none text-white sm:text-[64px] md:text-[100px]">
                 Big worlds. No <Highlight>limits.</Highlight>
               </h1>
             </Reveal>
             <Reveal step="second">
-              <p className="max-w-[561px] text-xl leading-[30px] text-white">
+              <p className="max-w-[561px] text-base leading-relaxed text-white md:text-xl md:leading-[30px]">
                 Your next adventure isn’t tied to a gaming rig. Discover games and stream them to the screen you already have.
               </p>
             </Reveal>
-            <Reveal step="third" className="flex flex-wrap gap-[15px]">
-              <Button arrow className="w-[182px] font-medium" href="#pricing">Join Today</Button>
-              <Button variant="ghost" arrow className="w-[182px]" href="#discover">Explore games</Button>
+            <Reveal step="third" className="grid grid-cols-2 gap-3 sm:flex sm:gap-[15px]">
+              <Button arrow className="font-medium sm:w-[182px]" href="#pricing">Join Today</Button>
+              <Button variant="ghost" arrow className="sm:w-[182px]" href="#discover">Explore games</Button>
             </Reveal>
           </div>
 
-          <Reveal step="third">
+          <Reveal step="third" className="-mx-4 px-4 md:mx-0 md:px-0">
+            {current.logo && (
+              <Image key={`m-${current.title}`} src={current.logo} alt="" width={148} height={55} className="mb-4 h-auto w-[148px] animate-[fade-in_600ms_ease-out] md:hidden" />
+            )}
             <div
               role="tablist"
               aria-label="Featured games"
-              className="no-scrollbar flex gap-[19px] overflow-x-auto pt-3 pb-2 xl:overflow-visible"
+              className="no-scrollbar flex snap-x gap-3 overflow-x-auto pt-3 pb-2 md:gap-[19px] xl:overflow-visible"
               onMouseLeave={endPreview}
             >
               {featured.map((game, i) => {
@@ -111,7 +114,7 @@ export function Hero() {
                     onMouseEnter={() => preview(i)}
                     onFocus={() => preview(i)}
                     onBlur={endPreview}
-                    className={`group relative h-[259px] w-[166px] shrink-0 cursor-pointer overflow-hidden rounded-xl text-left shadow-poster outline -outline-offset-[1.39px] transition-all duration-500 ease-snap ${
+                    className={`group relative h-[259px] w-[166px] shrink-0 cursor-pointer snap-start overflow-hidden rounded-xl text-left shadow-poster outline -outline-offset-[1.39px] transition-all duration-500 ease-snap ${
                       isActive ? "-translate-y-3 outline-2 outline-brand shadow-glow" : "outline-[1.39px] outline-white/80 hover:-translate-y-1.5"
                     }`}
                   >

@@ -22,13 +22,13 @@ export function Trending() {
       />
 
       <div className="relative">
-        <Reveal step="second" className="no-scrollbar flex gap-[19px] overflow-x-auto">
+        <Reveal step="second" className="no-scrollbar -mx-4 flex snap-x gap-[10px] overflow-x-auto px-4 md:mx-0 md:gap-[19px] md:px-0">
           {trending.map((game, i) => (
-            <div key={game.title} className="relative h-[353px] w-[271px] shrink-0">
-              <span className="absolute top-0 left-0 font-inter text-[300px] leading-none font-bold text-transparent select-none [-webkit-text-stroke:2px_rgba(255,255,255,0.35)]">
+            <div key={game.title} className="relative h-[197px] w-[151px] shrink-0 snap-start md:h-[353px] md:w-[271px]">
+              <span className="absolute top-0 left-0 font-inter text-[167px] leading-none font-bold text-transparent select-none [-webkit-text-stroke:1.5px_rgba(255,255,255,0.35)] md:text-[300px] md:[-webkit-text-stroke:2px_rgba(255,255,255,0.35)]">
                 {i + 1}
               </span>
-              <div className="absolute top-[62px] left-[105px]">
+              <div className="absolute top-[34px] left-[58px] origin-top-left scale-[0.558] md:top-[62px] md:left-[105px] md:scale-100">
                 <GameCard {...game} />
               </div>
             </div>

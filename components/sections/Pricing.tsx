@@ -136,10 +136,13 @@ export function Pricing() {
         aside={<BillingToggle value={billing} onChange={setBilling} />}
       />
 
-      <Reveal step="second" className="grid grid-cols-1 items-end gap-[21px] md:grid-cols-2 xl:grid-cols-4">
+      <Reveal
+        step="second"
+        className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-end gap-4 overflow-x-auto px-4 pt-1 pb-4 md:mx-0 md:grid md:grid-cols-2 md:gap-[21px] md:overflow-visible md:px-0 xl:grid-cols-4 [&>*]:w-[82vw] [&>*]:max-w-[360px] [&>*]:shrink-0 [&>*]:snap-center md:[&>*]:w-auto md:[&>*]:max-w-none"
+      >
         {plans.map((plan) =>
           plan.recommended ? (
-            <div key={plan.name} className="flex flex-col overflow-hidden rounded-t-[24px] rounded-b-[30px] outline-2 outline-brand">
+            <div key={plan.name} className="flex flex-col overflow-hidden rounded-t-[24px] rounded-b-[30px] outline-2 -outline-offset-2 outline-brand">
               <div className="relative -mb-[34px] flex items-center justify-center gap-1.5 overflow-hidden rounded-t-[24px] bg-brand pt-1.5 pb-10">
                 <span aria-hidden className="absolute inset-0 bg-[repeating-linear-gradient(115deg,rgba(255,255,255,0.15)_0_14px,transparent_14px_28px)]" />
                 <span className="relative font-inter-tight text-[15px] leading-[22.5px] font-medium text-white">Our Recommendation</span>

@@ -21,9 +21,10 @@ export function GamePreview({ title, details, anchor, onEnter, onLeave }: GamePr
   const [trailerReady, setTrailerReady] = useState(false);
 
   const margin = 16;
+  const width = Math.min(PREVIEW_WIDTH, window.innerWidth - margin * 2);
   const left = Math.min(
-    Math.max(anchor.left + anchor.width / 2 - PREVIEW_WIDTH / 2, margin),
-    window.innerWidth - PREVIEW_WIDTH - margin,
+    Math.max(anchor.left + anchor.width / 2 - width / 2, margin),
+    window.innerWidth - width - margin,
   );
   const top = Math.max(anchor.top + anchor.height / 2 - 160, margin);
 
@@ -31,7 +32,7 @@ export function GamePreview({ title, details, anchor, onEnter, onLeave }: GamePr
     <div
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
-      style={{ left, top, width: PREVIEW_WIDTH }}
+      style={{ left, top, width }}
       className="fixed z-[60] flex origin-center animate-[preview-in_350ms_cubic-bezier(0.16,1,0.3,1)] flex-col gap-[13px] overflow-hidden rounded-[30px] bg-black shadow-poster outline outline-1 -outline-offset-1 outline-white/80"
     >
       <div className="relative h-[200px] overflow-hidden rounded-t-[30px]">

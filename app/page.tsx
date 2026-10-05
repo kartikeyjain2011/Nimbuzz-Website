@@ -14,7 +14,7 @@ export default function Home() {
     <div className="overflow-x-clip bg-black">
       <Navbar />
       <Hero />
-      <main className="mx-auto flex max-w-[1653px] flex-col gap-24 px-4 pt-10 pb-10 md:gap-40 md:px-[38px]">
+      <main className="mx-auto flex max-w-[1653px] flex-col gap-16 px-4 pt-10 pb-6 md:gap-40 md:pb-10 md:px-[38px]">
         <Discover />
         <HowItWorks />
         <Trending />

@@ -17,7 +17,7 @@ export function Footer() {
         <div className="absolute inset-12 rounded-full bg-mint/60 blur-[40px]" />
       </div>
 
-      <div className="relative mx-auto flex max-w-[1365px] flex-col px-6 pt-[70px] md:px-10">
+      <div className="relative mx-auto flex max-w-[1365px] flex-col px-5 pt-12 md:px-10 md:pt-[70px]">
         <div className="flex flex-col items-center gap-3 border-b border-line pb-5">
           <p className="text-xs text-muted">Secure payments accepted</p>
           <div className="flex flex-wrap items-center justify-center gap-2.5">
@@ -31,7 +31,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-2.5 py-4 text-xs text-muted">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 py-4 text-[10px] text-muted md:text-xs">
           <span className="flex items-center gap-1">
             <Icon name="griddy-icons_lock-alt-02" className="size-4" />
             256-bit SSL encrypted
@@ -46,8 +46,8 @@ export function Footer() {
         <div className="flex flex-col justify-between gap-12 py-10 md:flex-row md:items-start">
           <div className="flex max-w-[300px] flex-col gap-3">
             <a href="#" className="flex items-center gap-3">
-              <NimbusMark variant="footer" className="h-[46px] w-[69px]" />
-              <span className="text-[29.75px] font-bold tracking-[0.3em] text-white">NIMBUS</span>
+              <NimbusMark variant="footer" className="h-[35px] w-[52px] md:h-[46px] md:w-[69px]" />
+              <span className="text-[22px] font-bold tracking-[0.3em] text-white md:text-[29.75px]">NIMBUS</span>
             </a>
             <p className="text-[13px] text-muted">Lemonade Digital Media Technology Private Limited</p>
             <address className="mt-5 flex flex-col gap-1.5 text-[13px] text-muted not-italic">
@@ -57,7 +57,7 @@ export function Footer() {
             </address>
           </div>
 
-          <div className="flex gap-16 md:gap-[100px]">
+          <div className="flex justify-center gap-16 md:justify-start md:gap-[100px]">
             {columns.map((col) => (
               <nav key={col.title} className="flex flex-col gap-4">
                 <p className="font-mono text-base text-brand">{col.title}</p>
@@ -69,7 +69,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="relative z-10 flex flex-col gap-3 border-t border-line pt-4 text-xs text-muted md:flex-row md:items-center md:justify-between">
+        <div className="relative z-10 flex flex-col items-center gap-1.5 border-t border-line pt-6 text-center text-[10px] text-muted md:flex-row md:justify-between md:gap-3 md:pt-4 md:text-xs">
           <span>© 2026 Nimbus. All rights reserved.</span>
           <span>CIN U72900DL2021PTC388171 · GSTIN 07AAECL7835P1ZT</span>
           <span>
@@ -79,7 +79,7 @@ export function Footer() {
 
         <p
           aria-hidden
-          className="pointer-events-none -mt-6 h-[clamp(60px,10vw,150px)] overflow-hidden text-center font-display text-[clamp(80px,15vw,230px)] leading-[0.85] font-medium tracking-[0.15em] text-transparent select-none [-webkit-text-stroke:1.5px_rgba(22,163,74,0.45)]"
+          className="pointer-events-none mt-4 h-[clamp(52px,10vw,150px)] md:-mt-6 overflow-hidden text-center font-display text-[clamp(80px,15vw,230px)] leading-[0.85] font-medium tracking-[0.15em] text-transparent select-none [-webkit-text-stroke:1.5px_rgba(22,163,74,0.45)]"
         >
           NIMBUS
         </p>

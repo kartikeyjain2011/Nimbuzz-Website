@@ -23,11 +23,11 @@ function SlantedTile({ src, className = "" }: { src: string; className?: string 
 
 export function PlayAnywhere() {
   return (
-    <section id="play-anywhere" className="flex scroll-mt-32 flex-col gap-[47px]">
-      <SectionHeading eyebrow="04 / PLAY ANYWHERE" title={<>Same worlds. New <Highlight>screens.</Highlight></>} />
+    <section id="play-anywhere" className="flex scroll-mt-32 flex-col gap-8 md:gap-[47px]">
+      <SectionHeading eyebrow="04 / PLAY ANYWHERE" title={<>Same worlds. <br className="md:hidden" />New <Highlight>screens.</Highlight></>} />
 
-      <div className="relative overflow-hidden rounded-[30px] bg-black md:h-[620px]">
-        <div aria-hidden className="absolute inset-y-0 right-[-6%] left-[28%] hidden flex-col gap-1.5 md:flex">
+      <div className="relative overflow-hidden rounded-[20px] bg-black md:h-[620px] md:rounded-[30px]">
+        <div aria-hidden className="absolute inset-y-0 right-[-30%] left-[35%] flex flex-col gap-1 opacity-60 md:right-[-6%] md:left-[28%] md:gap-1.5 md:opacity-100">
           <div className="flex h-[78%] gap-1.5">
             {topRow.map((src) => (
               <SlantedTile key={src} src={src} className="flex-1" />
@@ -42,19 +42,19 @@ export function PlayAnywhere() {
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,#000_25%,rgba(0,0,0,0.75)_45%,rgba(0,0,0,0)_75%)]" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-[linear-gradient(0deg,#000_0%,rgba(0,0,0,0)_100%)]" />
 
-        <div className="relative flex max-w-[640px] flex-col gap-4 px-6 py-12 md:px-[60px] md:pt-[50px]">
+        <div className="relative flex max-w-[640px] flex-col gap-3 px-4 py-8 md:gap-4 md:px-[60px] md:py-12 md:pt-[50px]">
           <Reveal step="first">
             <IconTile>
-              <Icon name="basil_mobile-phone-outline" className="size-[42px] text-white" />
+              <Icon name="basil_mobile-phone-outline" className="size-7 text-white md:size-[42px]" />
             </IconTile>
           </Reveal>
-          <Reveal step="second" className="flex flex-col gap-4">
-            <h3 className="text-[40px] leading-[1.15] text-white capitalize md:text-[60px]">
+          <Reveal step="second" className="flex flex-col gap-3 md:gap-4">
+            <h3 className="text-[30px] leading-[1.15] text-white capitalize sm:text-[44px] md:text-[60px]">
               Familiar realms.
               <br />
               Fresh <Highlight>battles.</Highlight>
             </h3>
-            <p className="text-xl leading-[30px] text-white">
+            <p className="text-sm leading-relaxed text-white md:text-xl md:leading-[30px]">
               A laptop at your desk. A phone on the sofa. Nimbus brings cloud gaming to supported screens, without a local game installation.
             </p>
             <ul className="flex gap-[26px] border-y border-line py-[18px]">
@@ -74,8 +74,8 @@ export function PlayAnywhere() {
           </Reveal>
         </div>
 
-        <Reveal step="third" className="relative px-6 pb-10 md:absolute md:right-[30px] md:bottom-[30px] md:max-w-[520px] md:p-0">
-          <p className="text-xl leading-[30px] text-white/50 md:text-right">
+        <Reveal step="third" className="relative px-4 pb-6 md:absolute md:right-[30px] md:bottom-[30px] md:max-w-[520px] md:p-0">
+          <p className="text-right text-xs leading-relaxed text-white/50 md:text-xl md:leading-[30px]">
             Device, browser, controller and connection requirements vary. Check compatibility before you start.
           </p>
         </Reveal>

@@ -26,14 +26,14 @@ export function Discover() {
         action={{ label: "View all", href: "#" }}
       />
 
-      <Reveal step="second" className="no-scrollbar -mx-4 flex gap-5 overflow-x-auto px-4 py-2 2xl:justify-between">
+      <Reveal step="second" className="no-scrollbar -mx-4 flex snap-x gap-[19px] overflow-x-auto scroll-px-4 px-4 py-2 2xl:justify-between [&>*]:snap-start">
         {games.map((game) => (
           <GameCard key={game.title} {...game} capitalize />
         ))}
       </Reveal>
 
       <Reveal step="third">
-        <div className="flex flex-col gap-3 border-y border-line px-6 py-[22px] text-[11px] text-white sm:flex-row sm:justify-between md:px-16">
+        <div className="flex flex-wrap justify-center gap-3.5 border-y border-line px-2.5 py-[22px] text-center text-[11px] text-white sm:justify-between md:px-16">
           {pillars.map((p) => (
             <span key={p}>{p}</span>
           ))}

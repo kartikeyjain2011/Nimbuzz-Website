@@ -25,7 +25,7 @@ const steps: Step[] = [
     icon: "codicon_search",
     video: videos.clip1,
     poster: scenes.firstLight,
-    logo: { src: logos.firstLight, className: "right-[30px]" },
+    logo: { src: logos.firstLight, className: "right-3 md:right-[30px]" },
     align: "left",
   },
   {
@@ -35,7 +35,7 @@ const steps: Step[] = [
     icon: "ep_loading",
     video: videos.clip2,
     poster: scenes.shadows,
-    logo: { src: logos.shadows, className: "left-[30px]" },
+    logo: { src: logos.shadows, className: "left-3 md:left-[30px]" },
     align: "right",
   },
   {
@@ -91,20 +91,25 @@ export function HowItWorks() {
   }, []);
 
   return (
-    <section id="how-it-works" className="flex scroll-mt-32 flex-col gap-[47px]">
-      <SectionHeading eyebrow="02 / THE SIMPLE PART" title={<span className="normal-case">Less setup. <Highlight>More game.</Highlight></span>} />
+    <section id="how-it-works" className="flex scroll-mt-32 flex-col gap-8 md:gap-[47px]">
+      <div className="flex flex-col gap-4">
+        <SectionHeading eyebrow="02 / THE SIMPLE PART" title={<span className="normal-case">Less setup. <Highlight>More game.</Highlight></span>} />
+        <p className="font-inter text-[11px] leading-[17.6px] text-[#68746C] md:text-sm">
+          Explore the catalog for current availability. Game access may require a separate purchase or linked account.
+        </p>
+      </div>
 
-      <div className="flex flex-col gap-16 pb-10">
+      <div className="flex flex-col gap-10 pb-6 md:gap-16 md:pb-10">
         {steps.map((step, i) => (
           <article
             key={step.highlight}
             ref={(el) => {
               cardRefs.current[i] = el;
             }}
-            className="sticky h-[560px] md:h-[715px]"
+            className="sticky h-[300px] sm:h-[460px] md:h-[715px]"
             style={{ top: STACK_TOP + i * STACK_OFFSET }}
           >
-            <div className="group relative flex size-full origin-top items-center overflow-hidden rounded-[30px] shadow-[0_-20px_60px_rgba(0,0,0,0.6)] outline outline-1 -outline-offset-1 outline-white/80 will-change-transform">
+            <div className="group relative flex size-full origin-top items-center overflow-hidden rounded-[20px] md:rounded-[30px] shadow-[0_-20px_60px_rgba(0,0,0,0.6)] outline outline-1 -outline-offset-1 outline-white/80 will-change-transform">
               <video
                 src={step.video}
                 poster={step.poster}
@@ -123,22 +128,22 @@ export function HowItWorks() {
                 }`}
               />
               {step.logo && (
-                <Image src={step.logo.src} alt="" width={177} height={68} className={`absolute top-[30px] hidden h-[68px] w-auto md:block ${step.logo.className}`} />
+                <Image src={step.logo.src} alt="" width={177} height={68} className={`absolute top-3 h-5 w-auto md:top-[30px] md:h-[68px] ${step.logo.className}`} />
               )}
 
-              <div className={`relative w-full px-6 md:px-[60px] ${step.align === "right" ? "md:flex md:justify-end" : ""}`}>
-                <div className="flex max-w-[788px] flex-col gap-2.5">
+              <div className={`relative flex w-full px-4 md:px-[60px] ${step.align === "right" ? "justify-end" : ""}`}>
+                <div className="flex max-w-[62%] flex-col gap-2 md:max-w-[788px] md:gap-2.5">
                   <Reveal step="first">
                     <IconTile>
-                      <Icon name={step.icon} className="size-[42px] text-white" />
+                      <Icon name={step.icon} className="size-7 text-white md:size-[42px]" />
                     </IconTile>
                   </Reveal>
-                  <Reveal step="second" className="flex flex-col gap-4">
-                    <h3 className="text-[40px] leading-tight text-white capitalize md:text-[60px]">
+                  <Reveal step="second" className="flex flex-col gap-2 md:gap-4">
+                    <h3 className="text-[22px] leading-tight text-white capitalize sm:text-[36px] md:text-[60px]">
                       {step.lead}
                       <Highlight>{step.highlight}</Highlight>
                     </h3>
-                    <p className="text-xl leading-[30px] text-white">{step.body}</p>
+                    <p className="text-xs leading-relaxed text-white sm:text-base md:text-xl md:leading-[30px]">{step.body}</p>
                   </Reveal>
                 </div>
               </div>

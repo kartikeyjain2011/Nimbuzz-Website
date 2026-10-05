@@ -24,6 +24,7 @@ export const scenes = {
   lastOfUs: img("cf9ed9df192ca8d934198fbfad1f75c619a69e63.png"),
   odyssey: img("a8e9684423e3981c1ef98cb1fa009cb58dd06289.png"),
   ghostRecon: img("c2a5cd02a3ece2c260c4886725a809ca18129a9b.png"),
+  ctaCover: img("cta-cover-hd.jpg"),
   lineup: img("fd1c1097ac92b75a6da16af2c476ef025105e9e8.png"),
 };
 

@@ -83,11 +83,11 @@ type SectionHeadingProps = {
 
 export function SectionHeading({ eyebrow, title, description, action, aside }: SectionHeadingProps) {
   return (
-    <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-      <Reveal className="flex flex-col gap-3.5">
+    <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-6">
+      <Reveal className="flex flex-col gap-2.5 md:gap-3.5">
         <p className="text-base text-accent">{eyebrow}</p>
-        <h2 className="text-[40px] leading-[1.1] text-ink capitalize md:text-[64px]">{title}</h2>
-        {description && <p className="text-xl leading-[30px] text-white md:text-2xl">{description}</p>}
+        <h2 className="text-[32px] leading-[1.1] text-ink capitalize sm:text-[44px] md:text-[64px]">{title}</h2>
+        {description && <p className="text-base leading-relaxed text-white md:text-2xl md:leading-[30px]">{description}</p>}
       </Reveal>
       {action && (
         <a href={action.href} className="group inline-flex shrink-0 items-center gap-2 text-base text-white">
@@ -102,7 +102,7 @@ export function SectionHeading({ eyebrow, title, description, action, aside }: S
 
 export function IconTile({ children }: { children: ReactNode }) {
   return (
-    <div className="flex size-[70px] items-center justify-center rounded-[12.46px] outline outline-[0.98px] -outline-offset-[0.98px] outline-white/80">
+    <div className="flex size-12 items-center justify-center rounded-[10px] md:size-[70px] md:rounded-[12.46px] outline outline-[0.98px] -outline-offset-[0.98px] outline-white/80">
       {children}
     </div>
   );
