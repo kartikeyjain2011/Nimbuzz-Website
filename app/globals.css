@@ -1,26 +1,102 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand: #16a34a;
+  --color-brand-dark: #114e35;
+  --color-accent: #01da7f;
+  --color-mint: #5cf97e;
+  --color-cyan: #5ce4f9;
+  --color-ink: #f2f4f1;
+  --color-muted: #a1aaa4;
+  --color-soft: #bfbfbf;
+  --color-dim: #999999;
+  --color-line: #303a33;
+  --color-card: #141414;
+  --color-card-line: #262626;
+  --color-surface: #0a0a0a;
+
+  --font-display: var(--font-space-grotesk);
+  --font-inter: var(--font-inter-sans);
+  --font-inter-tight: var(--font-inter-tight-sans);
+  --font-mono: var(--font-plex-mono);
+
+  --shadow-glow: 0px 0px 50px 2px rgba(22, 163, 74, 0.28);
+  --shadow-glow-sm: 0px 0px 12px rgba(22, 163, 74, 0.28);
+  --shadow-poster:
+    -5px 2px 12px rgba(0, 0, 0, 0.1), -21px 7px 22px rgba(0, 0, 0, 0.09),
+    -47px 17px 30px rgba(0, 0, 0, 0.05), -84px 30px 36px rgba(0, 0, 0, 0.01);
+  --shadow-card:
+    0px 1px 1px rgba(0, 0, 0, 0.15), 0px 5px 8px rgba(0, 0, 0, 0.05),
+    0px 25px 40px rgba(0, 0, 0, 0.25), 0px 12px 20px rgba(0, 0, 0, 0.15);
+
+  --ease-snap: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  color: #fff;
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 26px));
+  transition:
+    opacity var(--reveal-duration, 550ms) var(--ease-snap) var(--reveal-delay, 200ms),
+    transform var(--reveal-duration, 550ms) var(--ease-snap) var(--reveal-delay, 200ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes hero-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes preview-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
