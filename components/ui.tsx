@@ -2,9 +2,10 @@ import Image from "next/image";
 import type { CSSProperties, ReactNode } from "react";
 import { Reveal } from "./Reveal";
 
-/** Renders an SVG from /public/icons tinted with the current text color. */
+/** Renders an SVG tinted with the current text color. `name` is a file in /public/icons, or an absolute path. */
 export function Icon({ name, className = "size-4" }: { name: string; className?: string }) {
-  const url = `url("${encodeURI(`/icons/${name}.svg`)}")`;
+  const path = name.startsWith("/") ? name : `/icons/${name}.svg`;
+  const url = `url("${encodeURI(path)}")`;
   const style: CSSProperties = {
     maskImage: url,
     WebkitMaskImage: url,

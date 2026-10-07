@@ -33,14 +33,14 @@ export function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-5 md:flex">
-          <a href="#" className="text-base text-ink transition-colors hover:text-brand">Sign in</a>
+          <a href="/dashboard" className="text-base text-ink transition-colors hover:text-brand">Sign in</a>
           <a href="#pricing" className="inline-flex h-[42px] w-[156px] items-center justify-center rounded-md bg-brand text-base font-bold text-white shadow-glow transition-all duration-300 ease-snap hover:-translate-y-0.5">
             Start Streaming
           </a>
         </div>
 
         <div className="flex items-center gap-4 lg:hidden">
-        <a href="#" className="text-sm text-ink md:hidden">Sign in</a>
+        <a href="/dashboard" className="text-sm text-ink md:hidden">Sign in</a>
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
